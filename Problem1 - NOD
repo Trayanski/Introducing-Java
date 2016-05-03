@@ -29,7 +29,7 @@ public class Problem1 {
         System.out.println("The numbers are equal == " + x);
     }
 
-    public static int NOD(int x, int y){ //count NOD and return the number(nod)
+    public static int NOD(int x, int y){ //count NOD and return the nod number
         int nod = 0;
         while (y!=0){ 
             nod = y;
