@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class Problem1 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int x = scanner.nextInt();
+        scanner.nextLine();
+        int y = scanner.nextInt();
+        scanner.nextLine();
+        int nod = 0;
+
+        while(x != y){
+            if(x>y){
+                x+=x-y;
+                nod = NOD(x, y);
+                System.out.printf("x: %d, y: %d, nod: %d\n", x, y, nod);
+            }else {
+                y+=y-x;
+                nod = NOD(y, x);
+                System.out.printf("x: %d, y: %d, nod: %d\n", x, y, nod);
+            }
+
+            x = scanner.nextInt();
+            scanner.nextLine();
+            y = scanner.nextInt();
+            scanner.nextLine();
+        }
+
+        System.out.println("The numbers are equal == " + x);
+    }
+
+    public static int NOD(int x, int y){
+        int nod = 0;
+        while (y!=0){
+            nod = y;
+            y = x%y;
+            x = nod;
+        }
+
+        return nod;
+    }
+}
