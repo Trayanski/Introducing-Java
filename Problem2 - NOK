@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+public class Problem1 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        long x = scanner.nextInt();
+        scanner.nextLine();
+        long y = scanner.nextInt();
+        scanner.nextLine();
+        long nok = 0;
+
+        while(x != y){
+            if(x>y){
+                x+=x-y;
+                nok = NOK(x, y);
+                System.out.printf("x: %d, y: %d, nok: %d\n", x, y, nok);
+            }else {
+                y+=y-x;
+                nok = NOK(y, x);
+                System.out.printf("x: %d, y: %d, nok: %d\n", x, y, nok);
+            }
+
+            x = scanner.nextInt();
+            scanner.nextLine();
+            y = scanner.nextInt();
+            scanner.nextLine();
+        }
+
+        System.out.println("The numbers are equal == " + x);
+    }
+
+    private static long NOK(long a, long b)
+    {
+        return a * (b / NOD(a, b));
+    }
+
+    private static long NOD(long a, long b)
+    {
+        while (b > 0)
+        {
+            long temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
+    }
+}
