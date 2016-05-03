@@ -4,9 +4,9 @@ public class Problem1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int[] array = {0,1,2,3,4,5,6,7,8,9};
-        Reverce(array);
+        Reverce(array); //applying the reverse method
 
-        for (int i = 0; i < array.length; i++) {
+        for (int i = 0; i < array.length; i++) { //printing
             if (i != array.length - 1){
                 System.out.print(array[i] + ", ");
             }else {
@@ -15,8 +15,8 @@ public class Problem1 {
         }
     }
 
-    public static void Reverce(int[] array){
-        int replace = 0;
+    public static void Reverce(int[] array){ //switching the places of the el in the beginning and the end 
+        int replace = 0;                     //after that add to the beginning 1 and take from the last el 1
         for (int i = 0, j = array.length - 1; i <= array.length / 2 && j >= array.length / 2; i++, j--) {
             replace = array[i];
             array[i] = array[j];
