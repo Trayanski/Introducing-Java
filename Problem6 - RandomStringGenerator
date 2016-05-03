@@ -6,14 +6,14 @@ public class Problem1 {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Length of the generated random string: ");
         int lengthOfTheRandomString = scanner.nextInt();
-        System.out.println(RandomString("ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890", lengthOfTheRandomString));
-    }
+        System.out.println(RandomString("ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890", lengthOfTheRandomString)); //all the elements that are randomly generated
+    }                                                                                                       //and  the length of the generated string 
 
     public static String RandomString(String allCharacters, int lengthOfTheRandomString) {
-        StringBuilder sb = new StringBuilder();
-        Random random = new Random();
+        StringBuilder sb = new StringBuilder(); //we can add and clean this adcanved string 
+        Random random = new Random();// the random generator
         for (int i = 0; i < lengthOfTheRandomString; i++) {
-            sb.append(allCharacters.charAt(random.nextInt(allCharacters.length())));
+            sb.append(allCharacters.charAt(random.nextInt(allCharacters.length()))); //geting a random char from allCharacters
         }
 
         return sb.toString();
