@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+public class Problem1 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int[] array = {1,2,3};
+        ArrayHandler arrayHandler = new ArrayHandler();
+        int minElement = arrayHandler.getMinElement(array);
+        System.out.println(minElement);
+        int sum = arrayHandler.getSum(array);
+        System.out.println(sum);
+        arrayHandler.printArray(array);
+    }
+
+    public static class ArrayHandler {
+
+        public int getMinElement (int[] array) {
+            int minEl = array[1];
+            for(int el : array){
+                if (el<minEl){
+                    minEl = el;
+                }
+            }
+
+            return minEl;
+        }
+
+        public int getSum (int[] array) {
+            int sum = 0;
+            for (int el : array){
+                sum+=el;
+            }
+
+            return sum;
+        }
+
+        public void printArray(int[] array){
+            for (int i = 0; i < array.length; i++) {
+                if (i != array.length - 1){
+                    System.out.print(array[i] + ", ");
+                }else {
+                    System.out.println(array[i]);
+                }
+            }
+
+        }
+    }
+}
