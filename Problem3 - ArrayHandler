@@ -3,9 +3,9 @@ import java.util.Scanner;
 public class Problem1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int[] array = {1,2,3};
+        int[] array = {1,2,3}; //a simple array
         ArrayHandler arrayHandler = new ArrayHandler();
-        int minElement = arrayHandler.getMinElement(array);
+        int minElement = arrayHandler.getMinElement(array); 
         System.out.println(minElement);
         int sum = arrayHandler.getSum(array);
         System.out.println(sum);
@@ -16,7 +16,7 @@ public class Problem1 {
 
         public int getMinElement (int[] array) {
             int minEl = array[1];
-            for(int el : array){
+            for(int el : array){ //if there is a number, smaller then minEl ... minEl gets the value of this element.
                 if (el<minEl){
                     minEl = el;
                 }
@@ -27,17 +27,17 @@ public class Problem1 {
 
         public int getSum (int[] array) {
             int sum = 0;
-            for (int el : array){
+            for (int el : array){  //add each int to the sum
                 sum+=el;
             }
 
             return sum;
         }
 
-        public void printArray(int[] array){
+        public void printArray(int[] array){ //print each element of the array and if it's the last print it without comma
             for (int i = 0; i < array.length; i++) {
                 if (i != array.length - 1){
-                    System.out.print(array[i] + ", ");
+                    System.out.print(array[i] + ", ");  
                 }else {
                     System.out.println(array[i]);
                 }
