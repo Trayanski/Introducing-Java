@@ -3,17 +3,17 @@ import java.util.Scanner;
 public class Problem1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int x = scanner.nextInt();
+        int x = scanner.nextInt(); //input x
         scanner.nextLine();
-        int y = scanner.nextInt();
+        int y = scanner.nextInt(); //input y
         scanner.nextLine();
         int nod = 0;
 
-        while(x != y){
+        while(x != y){ //while x and y are not equal >>
             if(x>y){
                 x+=x-y;
-                nod = NOD(x, y);
-                System.out.printf("x: %d, y: %d, nod: %d\n", x, y, nod);
+                nod = NOD(x, y); //counting the NOD 
+                System.out.printf("x: %d, y: %d, nod: %d\n", x, y, nod); //printing
             }else {
                 y+=y-x;
                 nod = NOD(y, x);
@@ -29,9 +29,9 @@ public class Problem1 {
         System.out.println("The numbers are equal == " + x);
     }
 
-    public static int NOD(int x, int y){
+    public static int NOD(int x, int y){ //count NOD and return the number(nod)
         int nod = 0;
-        while (y!=0){
+        while (y!=0){ 
             nod = y;
             y = x%y;
             x = nod;
