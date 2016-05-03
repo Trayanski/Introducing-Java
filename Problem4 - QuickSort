@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Problem1 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int[] array = {8,5,6,1,2,7,9,3,0,4};
+        int replace = 0;
+
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 1; j < array.length; j++) {
+                if (array[j]<array[i]) {
+                    replace = array[i];  
+                    array[i] = array[j];
+                    array[j] = replace;
+                }
+            }
+        }
+                    
+        for (int i = 1, j = array.length - 1; i <= array.length / 2 && j >= array.length / 2; i++, j--) {
+            replace = array[i];
+            array[i] = array[j]; //array = 0987654321 and i reverce everything except the first number to complete the task
+            array[j] = replace;
+        }
+
+        for (int i = 0; i < array.length; i++) { //printing
+            if (i != array.length - 1){
+                System.out.print(array[i] + ", ");  //printing
+            }else {
+                System.out.println(array[i]);
+            }
+        }
+    }
+}
